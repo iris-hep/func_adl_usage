@@ -1,0 +1,21 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Basics
+    chapters:
+    - file: hello_world
+    - file: data_as_a_stream
+    - file: getting_the_data
+    - file: using_select
+    - file: using_select_many
+  - caption: Topics
+    chapters:
+    - file: running_locally
+    - file: running_servicex
+  - caption: Advanced
+    chapters:
+    - file: errors
+    - file: servicex_frontend
