@@ -4,7 +4,7 @@
 
 ## Usage
 
-This book is published [here]()
+This book is published [here](http://iris-hep.org/func_adl_usage/)
 
 ## Development
 
@@ -33,7 +33,7 @@ jupyter-book build --all user_manual
 And then to push the pages for web publication:
 
 ```bash
-ghp-import -n -p -f ./book/_build/html
+ghp-import -n -p -f ./user_manual/_build/html
 ```
 
 GitHub takes a few minutes to update is pages. If the table of contents changes you'll need to refresh your browser if you are looking at an old page.
