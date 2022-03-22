@@ -1,3 +1,7 @@
 jupyter-book
 func-adl-servicex-xaodr21
 ghp-import
+matplotlib
+vector
+hist
+mplhep
