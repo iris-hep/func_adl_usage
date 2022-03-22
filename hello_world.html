@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Streaming Data" href="data_as_a_stream.html" />
@@ -235,6 +237,23 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gordonwatts/func_adl_usage/main?urlpath=tree/user_manual/hello_world.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -245,6 +264,18 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-servicex-access">
+   Setting ServiceX Access
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-an-instance-of-servicex">
+     Finding an instance of ServiceX
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#accessing-a-plain-root-file">
    Accessing a Plain ROOT File
@@ -281,6 +312,18 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-servicex-access">
+   Setting ServiceX Access
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-an-instance-of-servicex">
+     Finding an instance of ServiceX
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#accessing-a-plain-root-file">
    Accessing a Plain ROOT File
   </a>
@@ -306,11 +349,135 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="hello-world">
 <h1>Hello World<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
+<p>In this section we’ll outline the steps to go from a brand new python virtual environment to getting a simple result from ServiceX on a new computer.</p>
+<div class="section" id="setting-servicex-access">
+<h2>Setting ServiceX Access<a class="headerlink" href="#setting-servicex-access" title="Permalink to this headline">¶</a></h2>
+<p>ServiceX requires an authentication token to use and access an experiment’s data files. The <code class="docutils literal notranslate"><span class="pre">servicex</span></code> python module will automatically read this from a <code class="docutils literal notranslate"><span class="pre">servicex.yaml</span></code> file located on your machine. There are several places it can be located:</p>
+<ul class="simple">
+<li><p>In your current working directory, or above it.</p></li>
+<li><p>In your root directory</p></li>
+<li><p>It can be called <code class="docutils literal notranslate"><span class="pre">servicex.yaml</span></code> or <code class="docutils literal notranslate"><span class="pre">.servicex</span></code></p></li>
+</ul>
+<p>To get its contents you’ll need to go to an instance of ServiceX. One you log in you’ll be presented with the standard (rather empty) web page:</p>
+<a class="reference internal image-reference" href="_images/sx_header_page.png"><img alt="ServiceX Web Page Header" class="align-center" src="_images/sx_header_page.png" style="width: 400px;" /></a>
+<p>From the drop down on the right, select your name, and select _Profile`. This will bring up a page that looks like this:</p>
+<a class="reference internal image-reference" href="_images/sx_profile_page.png"><img alt="ServiceX Profile Web Page" class="align-center" src="_images/sx_profile_page.png" style="width: 400px;" /></a>
+<p>Select the <em>download</em> button to the right of the <strong>API Token</strong> line. Store this small file in your home directory as <code class="docutils literal notranslate"><span class="pre">servicex.yaml</span></code>. You should be ready to go! This file is quite flexible, see the section on <a class="reference internal" href="servicex_frontend.html#ch-controlling-sx"><span class="std std-ref">configuring servicex</span></a>.</p>
+<div class="section" id="finding-an-instance-of-servicex">
+<h3>Finding an instance of ServiceX<a class="headerlink" href="#finding-an-instance-of-servicex" title="Permalink to this headline">¶</a></h3>
+<p>This is a partial list that was up-to-date when this guide was written</p>
+<ul class="simple">
+<li><p>ATLAS xAOD and ROOT-file access via the <a class="reference external" href="http://af.uchicago.edu">analysis facility at UChicago</a></p></li>
+<li><p>CMS ROOT-file access via xxx</p></li>
+<li><p>CERN OpenData CMS Run 1 AOD access via xxx</p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="accessing-a-plain-root-file">
 <h2>Accessing a Plain ROOT File<a class="headerlink" href="#accessing-a-plain-root-file" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="accessing-an-atlas-r21-xaod-file">
 <h2>Accessing an ATLAS R21 xAOD File<a class="headerlink" href="#accessing-an-atlas-r21-xaod-file" title="Permalink to this headline">¶</a></h2>
+<p>Lets read jets from a modern <code class="docutils literal notranslate"><span class="pre">DAOD_PHYS</span></code> sample of <span class="math notranslate nohighlight">\(Z-&gt;e^+e^-\)</span> events. This file is produced by release 21 of the ATLAS production system (Run 2).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In your <code class="docutils literal notranslate"><span class="pre">servicex.yaml</span></code> file make sure that the <code class="docutils literal notranslate"><span class="pre">name</span></code> for the backend is <code class="docutils literal notranslate"><span class="pre">xaod_r21</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">func_adl_servicex_xaodr21</span> <span class="kn">import</span> <span class="n">SXDSAtlasxAODR21</span><span class="p">,</span> <span class="n">calib_tools</span>
+
+<span class="n">ds_xaod</span> <span class="o">=</span> <span class="n">SXDSAtlasxAODR21</span><span class="p">(</span><span class="s2">&quot;rucio://mc16_13TeV:mc16_13TeV.361106.PowhegPythia8EvtGen_AZNLOCTEQ6L1_Zee.deriv.DAOD_PHYS.e3601_e5984_s3126_r10201_r10210_p5001?files=20&quot;</span><span class="p">)</span>
+<span class="n">ds_xaod</span> <span class="o">=</span> <span class="n">calib_tools</span><span class="o">.</span><span class="n">query_update</span><span class="p">(</span><span class="n">ds_xaod</span><span class="p">,</span> <span class="n">perform_overlap_removal</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">SXDSAtlasxAODR21</span></code> is the data source. A <code class="docutils literal notranslate"><span class="pre">rucio</span></code> dataset. It has 100’s of files in it, and is a test dataset. If we let it run on the full dataset it takes about 15 minutes. Lets run on just the first 20 files, which should take only a minute or two. We select that using the <code class="docutils literal notranslate"><span class="pre">?file=20</span></code> parameter to the URI that specifies the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v_jets</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_xaod</span>
+          <span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">Jets</span><span class="p">())</span>
+          <span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">jets</span><span class="p">:</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jets</span> <span class="k">if</span> <span class="n">j</span><span class="o">.</span><span class="n">pt</span><span class="p">()</span><span class="o">/</span><span class="mf">1000.0</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">])</span>
+          <span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">jets</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">px</span><span class="p">()</span><span class="o">/</span><span class="mf">1000.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jets</span><span class="p">],</span>
+              <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">py</span><span class="p">()</span><span class="o">/</span><span class="mf">1000.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jets</span><span class="p">],</span>
+              <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">pz</span><span class="p">()</span><span class="o">/</span><span class="mf">1000.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jets</span><span class="p">],</span>
+          <span class="p">})</span>
+          <span class="o">.</span><span class="n">AsAwkwardArray</span><span class="p">()</span>
+          <span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">j.px()/1000.0</span></code> is necessary because in ATLAS all values are on <code class="docutils literal notranslate"><span class="pre">mm</span></code> and <code class="docutils literal notranslate"><span class="pre">MeV</span></code>.</p>
+<p>As the data is processed and streamed back you’ll see progress bars below the cell in a <code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span></code> that look something like this:</p>
+<a class="reference internal image-reference" href="_images/sx_query_progress.png"><img alt="ServiceX Query Marching Ants" class="align-center" src="_images/sx_query_progress.png" style="width: 400px;" /></a>
+<p>Overall, this query took 3 minute and 16 seconds on my machine (to run on ServiceX in UChicago, and download the data locally here in France). I you immediately re-execute the cell, the query will take a fraction of a second: results have been cached locally. You can even restart - as long as the query does not change and you don’t delete the cache, the old query results will be found.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of events: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">v_jets</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of events: 580000
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can make a very simple plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">awkward</span> <span class="k">as</span> <span class="nn">ak</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ak</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">v_jets</span><span class="o">.</span><span class="n">px</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$p_x$ [GeV]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$p_x$ distribution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/hello_world_10_0.png" src="_images/hello_world_10_0.png" />
+</div>
+</div>
+<p>We can also bring to bear more of the tools in the python physics ecosystem to make a nicer plot!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vector</span>
+<span class="n">vector</span><span class="o">.</span><span class="n">register_awkward</span><span class="p">()</span>
+
+<span class="n">v_jets_v</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">Array</span><span class="p">(</span><span class="n">v_jets</span><span class="p">,</span> <span class="n">with_name</span><span class="o">=</span><span class="s1">&#39;Momentum3D&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">mplhep</span> <span class="k">as</span> <span class="nn">hep</span>
+<span class="n">hep</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">hep</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">ATLAS</span><span class="p">)</span>
+<span class="n">hep</span><span class="o">.</span><span class="n">atlas</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;Personal&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">hist</span> <span class="kn">import</span> <span class="n">Hist</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="n">Hist</span><span class="o">.</span><span class="n">new</span>
+  <span class="o">.</span><span class="n">Reg</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$p_t$ [GeV]&quot;</span><span class="p">)</span>
+  <span class="o">.</span><span class="n">Int64</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">ak</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">v_jets_v</span><span class="o">.</span><span class="n">pt</span><span class="p">))</span>
+<span class="n">h</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\gordo\Code\iris-hep\func_adl_usage\.venv\lib\site-packages\mplhep\utils.py:211: UserWarning: Integer weights indicate poissonian data. Will calculate Garwood interval if ``scipy`` is installed. Otherwise errors will be set to ``sqrt(w2)``.
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="_images/hello_world_12_1.png" src="_images/hello_world_12_1.png" />
+</div>
+</div>
+<p>It is also possible to use ServiceX to access xAOD files that are stored locally on your machine. The setup and prerequisites are slightly different, and outlined in this section on <a class="reference internal" href="running_locally.html#ch-running-locally"><span class="std std-ref">local running</span></a>.</p>
 </div>
 <div class="section" id="accessing-a-cms-run-1-aod-file">
 <h2>Accessing a CMS Run 1 AOD File<a class="headerlink" href="#accessing-a-cms-run-1-aod-file" title="Permalink to this headline">¶</a></h2>
