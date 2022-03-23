@@ -19,3 +19,4 @@ parts:
     chapters:
     - file: errors
     - file: servicex_frontend
+    - file: async_running
