@@ -240,6 +240,23 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gordonwatts/func_adl_usage/main?urlpath=tree/user_manual/running_servicex.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -263,6 +280,26 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cms-run-1-aod">
    CMS Run 1 AOD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-features">
+   Common Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#servicex-dashboard">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ServiceX
+    </span>
+   </code>
+   Dashboard
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-title">
+   Query Title
   </a>
  </li>
 </ul>
@@ -300,6 +337,26 @@ const thebe_selector_output = ".output, .cell_output"
    CMS Run 1 AOD
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-features">
+   Common Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#servicex-dashboard">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ServiceX
+    </span>
+   </code>
+   Dashboard
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-title">
+   Query Title
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -313,6 +370,14 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Running on ServiceX<a class="headerlink" href="#running-on-servicex" title="Permalink to this headline">¶</a></h1>
 <p>Some short examples at this point.</p>
 <p>If you disconnect from the internet in the middle of a query execution, it will continue to execute inside ServiceX. You can then re-run the query, and the software should realize it was interupted, and fetch the results from the query you already made.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">func_adl</span> <span class="kn">import</span> <span class="n">ObjectStream</span>
+<span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">ds_xaod</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="uproot">
 <h2>UpROOT<a class="headerlink" href="#uproot" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -321,6 +386,86 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="cms-run-1-aod">
 <h2>CMS Run 1 AOD<a class="headerlink" href="#cms-run-1-aod" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="common-features">
+<h2>Common Features<a class="headerlink" href="#common-features" title="Permalink to this headline">¶</a></h2>
+<p>There are a few things that are common to running on the <code class="docutils literal notranslate"><span class="pre">ServiceX</span></code> backend. Most, but not all, of these are a function of the front-end library. When using <code class="docutils literal notranslate"><span class="pre">func_adl</span></code> direct access to this library is mostly hidden.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ssl-hep/ServiceX_frontend">Introduction to the <code class="docutils literal notranslate"><span class="pre">servicex</span></code> library and the up-to-date details.</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ssl-hep/ServiceX_frontend/releases">Releases</a> of the library, which should give you an idea of what has changed most recently.</p></li>
+<li><p>See the <a class="reference internal" href="servicex_frontend.html#ch-controlling-sx"><span class="std std-ref">chapter on the frontend <code class="docutils literal notranslate"><span class="pre">servicex</span></code> library’s features</span></a>.</p></li>
+</ul>
+</div>
+<div class="section" id="servicex-dashboard">
+<h2><code class="docutils literal notranslate"><span class="pre">ServiceX</span></code> Dashboard<a class="headerlink" href="#servicex-dashboard" title="Permalink to this headline">¶</a></h2>
+<p>Lets start with the dashboard, which is not part of the front-end library. Rather, it is one of the pages served from the service itself. Here is a typical picture while a query is running:</p>
+</div>
+<div class="section" id="query-title">
+<h2>Query Title<a class="headerlink" href="#query-title" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to add a title to your query. The title will appear on the <code class="docutils literal notranslate"><span class="pre">ServiceX</span></code> dashboard (the dash board is very common) - and is used no where else. This simply makes life easier if your code ends up running 20 or 30 queries to tell each one apart. The query is added to the <code class="docutils literal notranslate"><span class="pre">title</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">value</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">ObjectStream</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function value_async in module func_adl.object_stream:
+
+value_async(self, executor: &#39;Optional[Callable[[ast.AST, Optional[str]], Any]]&#39; = None, title: &#39;Optional[str]&#39; = None) -&gt; &#39;Any&#39;
+    Evaluate the ObjectStream computation graph. Tracks back to the source dataset to
+    understand how to evaluate the AST. It is possible to pass in an executor to override that
+    behavior (used mostly for testing).
+    
+    Arguments:
+    
+        executor        A function that when called with the ast will return a future for the
+                        result. If None, then uses the default executor. Normally is none
+                        and the default executor specified by the `EventDatasource` is called
+                        instead.
+        title           Optional title to hand to the transform
+    
+    Returns
+    
+        The first element of the ObjectStream after evaluation.
+    
+    
+    Note
+    
+        This is the non-blocking version - it will return a future which can
+        be `await`ed upon until the query is done.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">value_async</span></code> have the same signature. See the <a class="reference internal" href="servicex_frontend.html#sec-async"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">async</span></code> ServiceX</span></a> section for more information about the <code class="docutils literal notranslate"><span class="pre">async</span></code> API.</p>
+<p>Here is what the actual query looks like and how it shows up on the ServiceX Dashboard:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v_jets</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds_xaod</span>
+          <span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">Jets</span><span class="p">())</span>
+          <span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">jets</span><span class="p">:</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jets</span> <span class="k">if</span> <span class="n">j</span><span class="o">.</span><span class="n">pt</span><span class="p">()</span><span class="o">/</span><span class="mf">1000.0</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">])</span>
+          <span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">jets</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s1">&#39;pt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">pt</span><span class="p">()</span><span class="o">/</span><span class="mf">1000.0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jets</span><span class="p">],</span>
+          <span class="p">})</span>
+          <span class="o">.</span><span class="n">AsAwkwardArray</span><span class="p">()</span>
+          <span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test Job&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "01b591193e414246bc138f2bb15c57c9", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "de880bae7fa242fda49cc17dcb419b7f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>While it is running the job name will be included in the marching ant’s display:</p>
+<a class="reference internal image-reference" href="_images/notebook_title_job_running_status.png"><img alt="Notebook Marching Ants" class="align-center" src="_images/notebook_title_job_running_status.png" style="width: 600px;" /></a>
+<p>And the dash board will also be labeled:</p>
+<a class="reference internal image-reference" href="_images/dashboard_with_title.png"><img alt="Dashboard with transform title" class="align-center" src="_images/dashboard_with_title.png" style="width: 600px;" /></a>
+<p>Unless you are on an open unauthenticated ServiceX instance, only you will be able to see the title (along with the sys-admins!).</p>
 </div>
 </div>
 

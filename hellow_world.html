@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Controlling ServiceX &#8212; func_adl and ServiceX User Manual</title>
+    <title>Hello World &#8212; func_adl and ServiceX User Manual</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Running Asynchronously" href="async_running.html" />
-    <link rel="prev" title="Dealing With Errors" href="errors.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -100,11 +98,6 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="hello_world.html">
-   Hello World
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="data_as_a_stream.html">
    Streaming Data
   </a>
@@ -147,20 +140,15 @@ const thebe_selector_output = ".output, .cell_output"
   Advanced
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="errors.html">
    Dealing With Errors
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Controlling ServiceX
-  </a>
- </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="async_running.html">
-   Running Asynchronously
+  <a class="reference internal" href="servicex_frontend.html">
+   Controlling ServiceX
   </a>
  </li>
 </ul>
@@ -204,9 +192,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/servicex_frontend.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/hellow_world.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -224,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/gordonwatts/func_adl_usage/issues/new?title=Issue%20on%20page%20%2Fservicex_frontend.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/gordonwatts/func_adl_usage/issues/new?title=Issue%20on%20page%20%2Fhellow_world.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -251,18 +239,18 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#caching">
-   Caching
+  <a class="reference internal nav-link" href="#accessing-a-plain-root-file">
+   Accessing a Plain ROOT File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logging">
-   Logging
+  <a class="reference internal nav-link" href="#accessing-an-atlas-r21-xaod-file">
+   Accessing an ATLAS R21 xAOD File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#async-interface">
-   Async Interface
+  <a class="reference internal nav-link" href="#accessing-a-cms-run-1-aod-file">
+   Accessing a CMS Run 1 AOD File
   </a>
  </li>
 </ul>
@@ -275,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Controlling ServiceX</h1>
+                <h1>Hello World</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -286,18 +274,18 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#caching">
-   Caching
+  <a class="reference internal nav-link" href="#accessing-a-plain-root-file">
+   Accessing a Plain ROOT File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logging">
-   Logging
+  <a class="reference internal nav-link" href="#accessing-an-atlas-r21-xaod-file">
+   Accessing an ATLAS R21 xAOD File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#async-interface">
-   Async Interface
+  <a class="reference internal nav-link" href="#accessing-a-cms-run-1-aod-file">
+   Accessing a CMS Run 1 AOD File
   </a>
  </li>
 </ul>
@@ -309,23 +297,16 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="controlling-servicex">
-<span id="ch-controlling-sx"></span><h1>Controlling ServiceX<a class="headerlink" href="#controlling-servicex" title="Permalink to this headline">¶</a></h1>
-<p>Advanced configuration options and usage of <code class="docutils literal notranslate"><span class="pre">servicex</span></code>.</p>
-<ul class="simple">
-<li><p>You have to restart the engine once the first call has been made to <code class="docutils literal notranslate"><span class="pre">servicex</span></code> - servicex.yaml is loaded only once.</p></li>
-<li><p>details about how the cache works and how to clear it, etc.</p></li>
-</ul>
-<div class="section" id="caching">
-<h2>Caching<a class="headerlink" href="#caching" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="hello-world">
+<h1>Hello World<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="accessing-a-plain-root-file">
+<h2>Accessing a Plain ROOT File<a class="headerlink" href="#accessing-a-plain-root-file" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="logging">
-<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
-<p>The ServiceX libraries use the standard python logging libraries. If you want to see what is going on sometimes the first thing to do is turn
-on logging. In this example we check to see what the <code class="docutils literal notranslate"><span class="pre">func_adl</span></code> is that is being sent back to <code class="docutils literal notranslate"><span class="pre">servicex</span></code>.</p>
+<div class="section" id="accessing-an-atlas-r21-xaod-file">
+<h2>Accessing an ATLAS R21 xAOD File<a class="headerlink" href="#accessing-an-atlas-r21-xaod-file" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="async-interface">
-<span id="sec-async"></span><h2>Async Interface<a class="headerlink" href="#async-interface" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="accessing-a-cms-run-1-aod-file">
+<h2>Accessing a CMS Run 1 AOD File<a class="headerlink" href="#accessing-a-cms-run-1-aod-file" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -353,21 +334,7 @@ on logging. In this example we check to see what the <code class="docutils liter
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="errors.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Dealing With Errors</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="async_running.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Running Asynchronously</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
