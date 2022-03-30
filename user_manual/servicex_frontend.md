@@ -1,5 +1,10 @@
 (ch-controlling-sx)=
 
+# Working in a group
+
+- the query cache yaml file that one can use for everyone.
+- What to check into a repo what not to check into a repo
+
 # Controlling ServiceX
 
 Advanced configuration options and usage of `servicex`.
